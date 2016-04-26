@@ -1,0 +1,16 @@
+DEMON
+export PATH="$PATH:/usr/local/mongodb/bin"
+mongod
+
+SHELL
+export PATH="$PATH:/usr/local/mongodb/bin"
+mongo
+
+>show dbs;
+>use <db>;
+>db.dropDatabase();
+>db.getCollectionNames();
+>db.<collection>.getIndexes();
+>db.<collection>.createIndex({'$**': 'text'});
+>db.<collection>.drop();
+>exit
