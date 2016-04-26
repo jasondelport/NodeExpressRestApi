@@ -1,10 +1,13 @@
 var express = require('express'),
+    morgan = require('morgan'),
+    bodyParser = require('body-parser'),
     wine = require('./routes/wines');
 
 var app = express();
 
-app.use(express.logger('dev')); /* 'default', 'short', 'tiny', 'dev' */
-app.use(express.bodyParser());
+app.use(morgan('combined'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/wines', wine.findAll);
 app.get('/wines/:id', wine.findById);

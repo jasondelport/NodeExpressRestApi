@@ -2,8 +2,21 @@
     "name": "node-express-rest-api",
     "description": "Node Express REST API",
     "version": "0.0.1",
+    "author": "Jason Delport",
     "private": true,
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
+    },
     "dependencies": {
-        "express": "3.x"
+        "body-parser": "latest",
+        "express": "latest",
+        "mongodb": "latest",
+        "morgan": "latest"
+    },
+    "devDependencies": {
+      "gulp": "latest",
+      "gulp-livereload": "latest",
+      "gulp-nodemon": "latest"
     }
 }

@@ -9,6 +9,15 @@ var server = new Server('localhost', 27017, {
 });
 db = new Db('winedb', server);
 
+function handleError(res, reason, message, code) {
+    console.log("ERROR: " + reason);
+    res.status(code || 500).json({
+        "error": message
+    });
+}
+// handleError(res, "Invalid user input", "Must provide a first or last name.", 400);
+
+
 db.open(function(err, db) {
     if (!err) {
         console.log("Connected to 'winedb' database");
