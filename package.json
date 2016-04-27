@@ -1,23 +1,29 @@
 {
-  "name": "node-express-rest-api",
-  "description": "Node Express REST API",
-  "version": "0.0.1",
-  "author": "Jason Delport",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
-  },
-  "dependencies": {
-    "body-parser": "latest",
-    "express": "latest",
-    "mongodb": "latest",
-    "morgan": "latest",
-    "request": "^2.72.0"
-  },
-  "devDependencies": {
-    "gulp": "latest",
-    "gulp-livereload": "latest",
-    "gulp-nodemon": "latest"
-  }
+    "name": "node-express-rest-api",
+    "description": "Node Express REST API",
+    "version": "0.0.1",
+    "author": "Jason Delport",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
+    },
+    "scripts": {
+        "start": "nodemon server/server.js"
+    },
+    "dependencies": {
+        "body-parser": "latest",
+        "express": "latest",
+        "mongodb": "latest",
+        "morgan": "latest",
+        "request": "^2.72.0"
+    },
+    "devDependencies": {
+        "gulp": "latest",
+        "gulp-livereload": "latest",
+        "gulp-nodemon": "latest"
+    },
+    "engines": {
+        "node": "latest"
+    }
 }

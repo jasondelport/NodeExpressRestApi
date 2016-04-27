@@ -42,7 +42,7 @@ db.open(function(err, db) {
                 });
             }
             //console.log("creating index");
-            //collection.db.nobelprizes.createIndex({"$**": "text"});
+            //collection.createIndex({"$**": "text"});
         });
     }
 });
@@ -65,7 +65,7 @@ exports.findById = function(req, res) {
         }, function(err, item) {
             if (err) {
                 res.status(500).send({
-                    'error': 'An error has occurred - ' + err
+                    'error': 'An error occurred. ' + err
                 });
             } else {
                 res.send(item);
@@ -118,7 +118,7 @@ exports.addNobelPrize = function(req, res) {
         }, function(err, result) {
             if (err) {
                 res.status(500).send({
-                    'error': 'An error has occurred - ' + err
+                    'error': 'An error has occurred. ' + err
                 });
             } else {
                 console.log('Success: ' + JSON.stringify(result[0]));
@@ -131,7 +131,7 @@ exports.addNobelPrize = function(req, res) {
 exports.updateNobelPrize = function(req, res) {
     var id = req.params.id;
     var nobelprize = req.body;
-    console.log('Updating nobelprize: ' + id);
+    console.log('Updating nobelprize with id -> ' + id);
     var _id;
     try {
         _id = ObjectID(id);
@@ -148,12 +148,12 @@ exports.updateNobelPrize = function(req, res) {
             safe: true
         }, function(err, result) {
             if (err) {
-                console.log('Error updating nobelprize: ' + err);
+                console.log('Error updating nobelprize. ' + err);
                 res.status(500).send({
-                    'error': 'An error has occurred - ' + err
+                    'error': 'An error occurred. ' + err
                 });
             } else {
-                console.log('' + result + ' document(s) updated');
+                console.log('Document(s) updated.');
                 res.send(nobelprize);
             }
         });
@@ -163,12 +163,12 @@ exports.updateNobelPrize = function(req, res) {
 exports.deleteNobelPrize = function(req, res) {
     var id = req.params.id;
     var _id;
-    console.log('Deleting nobelprize: ' + id);
+    console.log('Deleting nobelprize with id -> ' + id);
     try {
         _id = ObjectID(id);
     } catch (err) {
         res.status(404).send({
-            error: "Record not found"
+            error: "Record not found."
         });
         return;
     }
@@ -180,10 +180,10 @@ exports.deleteNobelPrize = function(req, res) {
         }, function(err, result) {
             if (err) {
                 res.status(500).send({
-                    'error': 'An error. occurred.' + err
+                    'error': 'An error occurred. ' + err
                 });
             } else {
-                console.log('' + result + ' document(s) deleted');
+                console.log('Document(s) deleted.');
                 res.send(req.body);
             }
         });

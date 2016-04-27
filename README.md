@@ -2,5 +2,5 @@
 
 TODO:
 
-* nodemon
 * gulp
+* web app
