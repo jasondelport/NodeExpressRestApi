@@ -1,7 +1,8 @@
 var express = require('express'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    nobelprizes = require('./routes/nobelprizes'),
+    api = require('./routes/api.js'),
+    website = require('./routes/website.js'),
     fs = require("fs");
 
 var app = express();
@@ -12,16 +13,16 @@ app.use(morgan('common', {
         flags: 'a'
     })
 }));
+app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 
-app.get('/nobelprizes', nobelprizes.findAll);
-app.get('/nobelprizes/:id', nobelprizes.findById);
-app.post('/nobelprizes', nobelprizes.addNobelPrize);
-app.put('/nobelprizes/:id', nobelprizes.updateNobelPrize);
-app.delete('/nobelprizes/:id', nobelprizes.deleteNobelPrize);
+//http://expressjs.com/en/guide/routing.html
+app.use('/api', api);
+app.get('/', website.index);
+app.get('*', website.index);
 
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {

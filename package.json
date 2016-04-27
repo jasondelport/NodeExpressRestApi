@@ -3,20 +3,21 @@
     "description": "Node Express REST API",
     "version": "0.0.1",
     "author": "Jason Delport",
-    "private": true,
+    "main": "app.js",
+    "private": false,
     "repository": {
         "type": "git",
         "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
     },
     "scripts": {
-        "start": "nodemon server/server.js"
+        "start": "nodemon app/app.js"
     },
     "dependencies": {
         "body-parser": "latest",
         "express": "latest",
         "mongodb": "latest",
         "morgan": "latest",
-        "request": "^2.72.0"
+        "request": "latest"
     },
     "devDependencies": {
         "gulp": "latest",
