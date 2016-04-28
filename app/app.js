@@ -36,5 +36,6 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.listen(PORT);
-console.log('Listening on port ' + PORT);
+app.listen(PORT, function() {
+    console.log('Server listening on port ' + PORT);
+})
