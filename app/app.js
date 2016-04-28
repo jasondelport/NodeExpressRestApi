@@ -7,6 +7,8 @@ var express = require('express'),
 
 var app = express();
 
+var PORT = 3000;
+
 app.use(morgan('dev'));
 app.use(morgan('common', {
     stream: fs.createWriteStream('./access.log', {
@@ -34,5 +36,5 @@ if (app.get('env') === 'development') {
     });
 }
 
-app.listen(3000);
-console.log('Listening on port 3000');
+app.listen(PORT);
+console.log('Listening on port ' + PORT);

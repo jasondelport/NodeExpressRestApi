@@ -2,5 +2,5 @@ var express = require('express'),
     router = express.Router();
 
 exports.index = function(req, res) {
-    res.sendfile('../public/index.html');
+    res.sendfile('index.html');
 };
