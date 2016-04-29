@@ -23,6 +23,5 @@ TODO:
 
 * move database access out of router and into model
 * gulp file
-* webpack
 * live reload
 * web app (react + redux)
