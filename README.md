@@ -25,3 +25,4 @@ TODO:
 * gulp file
 * live reload
 * web app (react + redux)
+* add nodemon to package.json // https://github.com/remy/nodemon
