@@ -21,7 +21,6 @@ class AwesomeComponent extends React.Component {
       </div>
     );
   }
-
 }
 
 export default AwesomeComponent;

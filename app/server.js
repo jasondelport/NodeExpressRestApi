@@ -26,16 +26,6 @@ app.use('/api', api);
 app.get('/', website.index);
 app.get('*', website.index);
 
-if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
-        res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-app.listen(PORT, function() {
-    console.log('Server listening on port ' + PORT);
-})
+app.listen(PORT, function () {
+  console.log('App listening on port ' + PORT);
+});
