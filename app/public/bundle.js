@@ -49,8 +49,6 @@
 
 	'use strict';
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
 	var _react = __webpack_require__(/*! react */ 1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -79,25 +77,50 @@
 	  function App() {
 	    _classCallCheck(this, App);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(App).apply(this, arguments));
+	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
 	  }
 	
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_HelloMessage2.default, { message: 'World' }),
-	        _react2.default.createElement(_AwesomeComponent2.default, null)
-	      );
-	    }
-	  }]);
+	  App.prototype.render = function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_HelloMessage2.default, { message: 'World' }),
+	      _react2.default.createElement(_AwesomeComponent2.default, null)
+	    );
+	  };
 	
 	  return App;
 	}(_react2.default.Component);
 	
 	(0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('app'));
+	;
+	
+	(function () {
+	  function tagSource(fn, localName) {
+	    if (typeof fn !== "function") {
+	      return;
+	    }
+	
+	    if (fn.hasOwnProperty("__source")) {
+	      return;
+	    }
+	
+	    try {
+	      Object.defineProperty(fn, "__source", {
+	        enumerable: false,
+	        configurable: true,
+	        value: {
+	          fileName: '/Users/jasondelport/Code/mean/restApi/src/app/index.js',
+	          localName: localName
+	        }
+	      });
+	    } catch (err) {}
+	  }
+	
+	  tagSource(App, 'App');
+	})();
+
+	;
 
 /***/ },
 /* 1 */
@@ -20653,11 +20676,7 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	exports.__esModule = true;
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -20677,26 +20696,53 @@
 	  function HelloMessage() {
 	    _classCallCheck(this, HelloMessage);
 	
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(HelloMessage).apply(this, arguments));
+	    return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
 	  }
 	
-	  _createClass(HelloMessage, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Say Hello ',
-	        this.props.message,
-	        '!'
-	      );
-	    }
-	  }]);
+	  HelloMessage.prototype.render = function render() {
+	    return _react2.default.createElement(
+	      'h1',
+	      null,
+	      'Hello ',
+	      this.props.message,
+	      '.'
+	    );
+	  };
 	
 	  return HelloMessage;
 	}(_react2.default.Component);
 	
-	exports.default = HelloMessage;
+	var _default = HelloMessage;
+	exports.default = _default;
+	;
+	
+	(function () {
+	  function tagSource(fn, localName) {
+	    if (typeof fn !== "function") {
+	      return;
+	    }
+	
+	    if (fn.hasOwnProperty("__source")) {
+	      return;
+	    }
+	
+	    try {
+	      Object.defineProperty(fn, "__source", {
+	        enumerable: false,
+	        configurable: true,
+	        value: {
+	          fileName: '/Users/jasondelport/Code/mean/restApi/src/app/HelloMessage.js',
+	          localName: localName
+	        }
+	      });
+	    } catch (err) {}
+	  }
+	
+	  tagSource(HelloMessage, 'HelloMessage');
+	  tagSource(_default, 'default');
+	})();
+
+	;
 
 /***/ },
 /* 169 */
@@ -20707,11 +20753,7 @@
 
 	'use strict';
 	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	exports.__esModule = true;
 	
 	var _react = __webpack_require__(/*! react */ 1);
 	
@@ -20731,48 +20773,74 @@
 	  function AwesomeComponent(props) {
 	    _classCallCheck(this, AwesomeComponent);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(AwesomeComponent).call(this, props));
+	    var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
 	
 	    _this.state = { likesCount: 0 };
 	    _this.onLike = _this.onLike.bind(_this);
 	    return _this;
 	  }
 	
-	  _createClass(AwesomeComponent, [{
-	    key: 'onLike',
-	    value: function onLike() {
-	      var newLikesCount = this.state.likesCount + 1;
-	      this.setState({ likesCount: newLikesCount });
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
+	  AwesomeComponent.prototype.onLike = function onLike() {
+	    var newLikesCount = this.state.likesCount + 1;
+	    this.setState({ likesCount: newLikesCount });
+	  };
+	
+	  AwesomeComponent.prototype.render = function render() {
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      'Likes : ',
+	      _react2.default.createElement(
+	        'span',
+	        null,
+	        this.state.likesCount
+	      ),
+	      _react2.default.createElement(
 	        'div',
 	        null,
-	        'Likes : ',
 	        _react2.default.createElement(
-	          'span',
-	          null,
-	          this.state.likesCount
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'button',
-	            { onClick: this.onLike },
-	            'Like Me'
-	          )
+	          'button',
+	          { onClick: this.onLike },
+	          'Like Me'
 	        )
-	      );
-	    }
-	  }]);
+	      )
+	    );
+	  };
 	
 	  return AwesomeComponent;
 	}(_react2.default.Component);
 	
-	exports.default = AwesomeComponent;
+	var _default = AwesomeComponent;
+	exports.default = _default;
+	;
+	
+	(function () {
+	  function tagSource(fn, localName) {
+	    if (typeof fn !== "function") {
+	      return;
+	    }
+	
+	    if (fn.hasOwnProperty("__source")) {
+	      return;
+	    }
+	
+	    try {
+	      Object.defineProperty(fn, "__source", {
+	        enumerable: false,
+	        configurable: true,
+	        value: {
+	          fileName: '/Users/jasondelport/Code/mean/restApi/src/app/AwesomeComponent.js',
+	          localName: localName
+	        }
+	      });
+	    } catch (err) {}
+	  }
+	
+	  tagSource(AwesomeComponent, 'AwesomeComponent');
+	  tagSource(_default, 'default');
+	})();
+
+	;
 
 /***/ }
 /******/ ]);
