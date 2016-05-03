@@ -7,7 +7,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <HelloMessage message='Reacting' />
+        <HelloMessage message='React' />
         <AwesomeComponent />
       </div>
     );

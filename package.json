@@ -11,12 +11,16 @@
         "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
     },
     "scripts": {
-        "start": "nodemon --watch app/public app/server.js",
-        "webstart": "node dev-server.js",
-        "clean": "rm -r node_modules/*",
-        "open": "open http://localhost:3000",
-        "watch": "./node_modules/.bin/webpack -d --watch",
-        "build": "webpack -p"
+        "start": "mongod | node dev-server.js | node app/server.js",
+        "start:server": "mongod | nodemon app/server.js",
+        "start:web": "node dev-server.js",
+        "start:db": "mongod",
+        "clean": "rm -r app/public/*.js",
+        "remove": "rm -r node_modules/*",
+        "open": "open http://localhost:8080",
+        "//": "Comment: https://webpack.github.io/docs/cli.html",
+        "watch": "NODE_ENV=production webpack --config webpack-production.config.js -d --watch --progress --profile --colors",
+        "build": "NODE_ENV=production webpack --config webpack-production.config.js -p --progress --profile --colors"
     },
     "dependencies": {
         "body-parser": "latest",
