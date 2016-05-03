@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
-import HelloMessage from './HelloMessage.js';
-import AwesomeComponent from './AwesomeComponent.js';
+import HelloComponent from './HelloComponent.js';
+import LikeComponent from './LikeComponent.js';
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <HelloMessage message='React' />
-        <AwesomeComponent />
+        <HelloComponent message='React' />
+        <LikeComponent />
       </div>
     );
   }

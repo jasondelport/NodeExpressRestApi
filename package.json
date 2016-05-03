@@ -1,6 +1,6 @@
 {
-    "name": "react-node-express",
-    "description": "React Node Express",
+    "name": "rrnem-boilerplate",
+    "description": "React/Redux Node/Express Mongo",
     "version": "0.0.1",
     "author": "Jason Delport",
     "private": false,
@@ -12,7 +12,7 @@
     },
     "scripts": {
         "start": "mongod | node dev-server.js | node app/server.js",
-        "start:server": "mongod | nodemon app/server.js",
+        "start:api": "mongod | nodemon app/server.js",
         "start:web": "node dev-server.js",
         "start:db": "mongod",
         "clean": "rm -r app/public/*.js",
@@ -33,6 +33,7 @@
         "react-redux": "latest",
         "redux": "latest"
     },
+    "//": "Comment: need to remove some of these dependencies",
     "devDependencies": {
         "webpack": "latest",
         "webpack-dev-server": "latest",

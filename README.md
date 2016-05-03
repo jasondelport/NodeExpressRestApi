@@ -6,10 +6,10 @@ Set up with 'npm install'
 
 Run with 'npm start'
 
-WEB APP:
+WEB APP @ http://localhost:8080
 * GET /
 
-API CALLS:
+API CALLS @ http://localhost:3000
 
 * GET /api/nobelprizes
 * GET /api/nobelprizes/id
@@ -22,7 +22,4 @@ API CALLS:
 TODO:
 
 * move database access out of router and into model
-* gulp file
-* live reload
-* web app (react + redux)
-* add nodemon to package.json // https://github.com/remy/nodemon
+* web app (react, redux, router, tools)
