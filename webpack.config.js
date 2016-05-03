@@ -1,24 +1,26 @@
-var webpack = require('webpack');
 var path = require('path');
+var webpack = require('webpack');
 
-var DIST_DIR = path.resolve(__dirname, 'app/public');
-var SRC_DIR = path.resolve(__dirname, 'src/app');
-var NODE_MODULES_DIR = path.resolve(__dirname, 'node_modules');
-
-var config = {
-    entry: SRC_DIR + '/index.js',
-    output: {
-        path: DIST_DIR,
-        filename: 'bundle.js'
-    },
-    module: {
-        loaders: [{
-            test: /\.jsx?/,
-            exclude: NODE_MODULES_DIR,
-            include: SRC_DIR,
-            loader: 'babel'
-        }]
-    }
+module.exports = {
+  devtool: 'eval',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index'
+  ],
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/static/'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['react-hot', 'babel'],
+      include: path.join(__dirname, 'src')
+    }]
+  }
 };
-
-module.exports = config;

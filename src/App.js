@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {render} from 'react-dom';
 import HelloMessage from './HelloMessage.js';
 import AwesomeComponent from './AwesomeComponent.js';
 
-class App extends React.Component {
+export default class App extends Component {
   render () {
     return (
       <div>
-        <HelloMessage message='World' />
+        <HelloMessage message='Reacting' />
         <AwesomeComponent />
       </div>
     );
   }
 }
-
-render(<App/>, document.getElementById('app'));
