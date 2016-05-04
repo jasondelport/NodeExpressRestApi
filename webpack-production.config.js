@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: path.join(__dirname, 'src/index.js'),
@@ -18,6 +19,9 @@ module.exports = {
             compressor: {
                 warnings: false
             }
+        }),
+        new ExtractTextPlugin("bundle.css", {
+            allChunks: true
         })
     ],
     module: {
@@ -26,6 +30,9 @@ module.exports = {
             loader: 'babel',
             exclude: /node_modules/,
             include: path.join(__dirname, 'src')
+        }, {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style","css!sass")
         }]
     }
 };

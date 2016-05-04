@@ -23,4 +23,3 @@ TODO:
 
 * move database access out of router and into model
 * web app (react, redux, router, tools)
-* add css/sass and get webpack to compile/bundle it
