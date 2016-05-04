@@ -1,63 +1,64 @@
 {
-    "name": "rrnem-boilerplate",
-    "description": "React/Redux Node/Express Mongo",
-    "version": "0.0.1",
-    "author": "Jason Delport",
-    "private": false,
-    "main": "app/server.js",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
-    },
-    "scripts": {
-        "start": "mongod | node dev-server.js | node app/server.js",
-        "start:api": "mongod | nodemon app/server.js",
-        "start:web": "node dev-server.js",
-        "start:db": "mongod",
-        "clean": "rm -r app/public/*.js",
-        "remove": "rm -r node_modules/*",
-        "open": "open http://localhost:8080",
-        "//": "Comment: https://webpack.github.io/docs/cli.html",
-        "watch": "NODE_ENV=production webpack --config webpack-production.config.js -d --watch --progress --profile --colors",
-        "build": "NODE_ENV=production webpack --config webpack-production.config.js -p --progress --profile --colors"
-    },
-    "dependencies": {
-        "body-parser": "latest",
-        "express": "latest",
-        "mongodb": "latest",
-        "morgan": "latest",
-        "react": "latest",
-        "react-dom": "latest",
-        "request": "latest",
-        "react-redux": "latest",
-        "redux": "latest"
-    },
-    "//": "Comment: need to remove some of these dependencies",
-    "devDependencies": {
-        "webpack": "latest",
-        "webpack-dev-server": "latest",
-        "react-hot-loader": "^1.3.0",
-        "open": "latest",
-        "nodemon": "latest",
-        "babel-cli": "^6.3.17",
-        "babel-core": "^6.3.17",
-        "babel-loader": "^6.2.0",
-        "babel-preset-es2015": "latest",
-        "babel-preset-es2015-loose": "^6.1.3",
-        "babel-preset-react": "6.3.13",
-        "babel-preset-stage-0": "^6.3.13",
-        "gulp": "latest",
-        "gulp-livereload": "latest",
-        "gulp-nodemon": "latest",
-        "node-libs-browser": "^0.5.2",
-        "raw-loader": "^0.5.1",
-        "redux-devtools": "^3.0.1",
-        "redux-devtools-dock-monitor": "^1.0.1",
-        "redux-devtools-log-monitor": "^1.0.2",
-        "style-loader": "^0.12.3"
-    },
-    "engines": {
-        "node": "latest"
-    }
+  "name": "rrnem-boilerplate",
+  "description": "React/Redux Node/Express Mongo",
+  "version": "0.0.1",
+  "author": "Jason Delport",
+  "private": false,
+  "main": "app/server.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasondelport/NodeExpressRestApi.git"
+  },
+  "scripts": {
+    "start": "mongod | node dev-server.js | node app/server.js",
+    "start:api": "mongod | nodemon app/server.js",
+    "start:web": "node dev-server.js",
+    "start:db": "mongod",
+    "clean": "rm -r app/public/*.js",
+    "remove": "rm -r node_modules/*",
+    "open": "open http://localhost:8080",
+    "//": "Comment: https://webpack.github.io/docs/cli.html",
+    "watch": "NODE_ENV=production webpack --config webpack-production.config.js -d --watch --progress --profile --colors",
+    "build": "NODE_ENV=production webpack --config webpack-production.config.js -p --progress --profile --colors"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "jquery": "^2.2.3",
+    "mongodb": "latest",
+    "morgan": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "redux": "latest",
+    "request": "latest"
+  },
+  "//": "Comment: need to remove some of these dependencies",
+  "devDependencies": {
+    "webpack": "latest",
+    "webpack-dev-server": "latest",
+    "react-hot-loader": "^1.3.0",
+    "open": "latest",
+    "nodemon": "latest",
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "latest",
+    "babel-preset-es2015-loose": "^6.1.3",
+    "babel-preset-react": "6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "gulp": "latest",
+    "gulp-livereload": "latest",
+    "gulp-nodemon": "latest",
+    "node-libs-browser": "^0.5.2",
+    "raw-loader": "^0.5.1",
+    "redux-devtools": "^3.0.1",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.2",
+    "style-loader": "^0.12.3"
+  },
+  "engines": {
+    "node": "latest"
+  }
 }
