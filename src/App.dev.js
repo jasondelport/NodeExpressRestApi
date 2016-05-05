@@ -7,7 +7,7 @@ export default class App extends Component {
     return (
       <div>
         <h1>Nobel Prize Laureates in Literature</h1>
-        <NobelPrizeList url="/api/nobelprizes?category=literature" pollInterval={60000} />
+        <NobelPrizeList url="/api/nobelprizes?category=literature" pollInterval={60000*60} />
         <DevTools />
       </div>
     );

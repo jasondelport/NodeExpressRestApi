@@ -23,8 +23,8 @@
     "open": "open http://localhost:8080",
     "open:api": "open http://localhost:3000/api/nobelprizes",
     "//": "Comment: https://webpack.github.io/docs/cli.html",
-    "watch": "NODE_ENV=production webpack --config webpack-production.config.js -d --watch --progress --profile --colors",
-    "build": "NODE_ENV=production webpack --config webpack-production.config.js -p --progress --profile --colors"
+    "watch": "NODE_ENV=production webpack --config webpack-prod.config.js -d --watch --progress --profile --colors",
+    "build": "NODE_ENV=production webpack --config webpack-prod.config.js -p --progress --profile --colors"
   },
   "dependencies": {
     "body-parser": "latest",

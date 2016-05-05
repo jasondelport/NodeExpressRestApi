@@ -1,0 +1,9 @@
+$font-stack: "Courier New", Courier, monospace;
+$primary-color: #606060;
+$background-color: #D0EAFF;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $background-color
+}

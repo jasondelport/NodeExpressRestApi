@@ -1,6 +1,6 @@
 var express = require('express'),
     router = express.Router(),
-    nobelprizes = require('./nobelprizes');
+    nobelprizes = require('../models/nobelprizes');
 
 router.get('/nobelprizes', nobelprizes.findAll);
 router.get('/nobelprizes/:id', nobelprizes.findById);

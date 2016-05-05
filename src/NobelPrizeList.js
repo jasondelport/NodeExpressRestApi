@@ -18,7 +18,12 @@ var NobelPrizeList = React.createClass({
     });
   },
   getInitialState: function() {
-    return {data: []};
+    // add some dummy data to play with if api isn't working
+    if (process.env.NODE_ENV === 'production') {
+      return {data: []}
+    } else {
+      return {data: [{_id: "571f88b630655d55d3f26c59",year: "2015",category: "literature",laureates: [{id: "924",firstname: "Svetlana",surname: "Alexievich",motivation: "for her polyphonic writings, a monument to suffering and courage in our time",share: "1"}]}]};
+    }
   },
   componentDidMount: function() {
     this.loadFromServer();
